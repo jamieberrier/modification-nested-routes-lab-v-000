@@ -6,7 +6,7 @@ module ArtistsHelper
   # and to only display the artist's name if they are editing through nested routing
   def artist_select(song, path_type)
     # display the artist's name if editing through nested routing
-    if path == "nested"
+    if path_type == "nested"
       hidden_field_tag "song[artist_id]", song.artist_id
       display_artist(song)
     else # display a drop-down list of artists if editing directly via /songs/id/edit

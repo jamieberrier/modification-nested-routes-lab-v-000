@@ -32,6 +32,7 @@ class SongsController < ApplicationController
       @path_type = "nested"
     else
       @song = Song.new
+      @path_type = "not nested"
     end
   end
 

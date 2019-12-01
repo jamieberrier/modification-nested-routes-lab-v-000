@@ -54,6 +54,7 @@ class SongsController < ApplicationController
       end
     else
       @song = Song.find(params[:id])
+      # Hint: You'll need to set a variable in the controller action to pass to the helper method as an argument along with a song instance.
       @path_type = "not nested"
     end
   end

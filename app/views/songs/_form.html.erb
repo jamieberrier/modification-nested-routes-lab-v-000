@@ -1,9 +1,9 @@
 <%= form_for @song  do |f| %>
-  <% binding.pry %>
   <%= f.label :title %>
   <%= f.text_field :title %><br>
 
   <%= f.label :artist_name %>
+  <%= display_artist(@song) %>
   <%= artist_select(@song) %><br>
 
   <%= f.submit %>

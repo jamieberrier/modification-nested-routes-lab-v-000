@@ -49,6 +49,7 @@ class SongsController < ApplicationController
         redirect_to artists_path, alert: "Artist not found."
       else
         @song = artist.songs.find_by(id: params[:id])
+        # Hint: You'll need to set a variable in the controller action to pass to the helper method as an argument along with a song instance.
         @path_type = "nested"
         redirect_to artist_songs_path(artist), alert: "Song not found." if @song.nil?
       end

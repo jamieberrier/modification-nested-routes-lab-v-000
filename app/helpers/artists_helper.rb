@@ -9,7 +9,7 @@ module ArtistsHelper
     if path == "nested"
       hidden_field_tag "song[artist_id]", song.artist_id
       display_artist(song)
-    else # display a drop-down list of artists
+    else # display a drop-down list of artists if editing directly via /songs/id/edit
       select_tag "song[artist_id]", options_from_collection_for_select(Artist.all, :id, :name)
     end
   end

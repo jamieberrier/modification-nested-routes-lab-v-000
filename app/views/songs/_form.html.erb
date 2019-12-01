@@ -3,6 +3,7 @@
   <%= f.text_field :title %><br>
 
   <%= f.label :artist_name %>
+  <%= display_artist(@song) %>
   <%= artist_select(@song, @path_type) %><br>
 
   <%= f.submit %>

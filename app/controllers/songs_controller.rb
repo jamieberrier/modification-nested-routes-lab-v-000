@@ -25,6 +25,7 @@ class SongsController < ApplicationController
   end
 
   def new
+    # Validate that new songs created for an artist via nested routing are created for valid artists, and redirect to /artists if not.
     if params[:artist_id] && !Artist.exists?(params[:artist_id])
       redirect_to artists_path, alert: "Artist not found."
     elsif params[:artist_id] && Artist.exists?(params[:artist_id])

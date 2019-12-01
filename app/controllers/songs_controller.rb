@@ -53,7 +53,7 @@ class SongsController < ApplicationController
       artist = Artist.find_by(id: params[:artist_id])
       if artist.nil?
         redirect_to artists_path, alert: "Artist not found."
-      else
+      else # Validate that songs being edited via nested routing are in the artist's songs collection. Redirect to /artists/id/songs if not.
         @song = artist.songs.find_by(id: params[:id])
         # Hint: You'll need to set a variable in the controller action to pass to the helper method as an argument along with a song instance.
         @path_type = "nested"

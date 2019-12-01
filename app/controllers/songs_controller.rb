@@ -48,6 +48,7 @@ class SongsController < ApplicationController
   end
 
   def edit
+    # Validate that songs being edited via nested routing have a valid artist. Redirect to /artists if not.
     if params[:artist_id]
       artist = Artist.find_by(id: params[:artist_id])
       if artist.nil?

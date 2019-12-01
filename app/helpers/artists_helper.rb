@@ -4,7 +4,7 @@ module ArtistsHelper
   end
   # a helper to display a drop-down list of artists if someone edits a song directly via /songs/id/edit and to only display the artist's name if they are editing through nested routing
   def artist_select(song, path)
-    if song.artist
+    if path == "nested"
       hidden_field_tag "song[artist_id]", song.artist_id
     else
       select_tag "song[artist_id]", options_from_collection_for_select(Artist.all, :id, :name)
